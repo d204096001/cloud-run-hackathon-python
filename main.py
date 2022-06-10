@@ -50,7 +50,7 @@ def move():
     
     def move(move_x, move_y):
         r = random.random()
-        if r > 0.5:
+        if r > 0.2:
             if move_x > 0:
                 if self_state['direction'] == 'E':
                     return 'F'
@@ -96,7 +96,7 @@ def move():
                 else:
                     return 'at'
             else:
-                return 'T'
+                return 'at'
         else:
             if move_y > 0:
                 if self_state['direction'] == 'E':
@@ -143,7 +143,7 @@ def move():
                 else:
                     return 'at'
             else:
-                return 'T'
+                return 'at'
     
     def fine_target_fire():
         # update map
@@ -199,13 +199,6 @@ def move():
             return 'T'
     
     move_x, move_y = fine_nearest_corner()
-#     if (move_x == last_move_x)and(move_y == last_move_y):
-#         # stock
-#         return 'T'
-#     else:
-#         move_x_list.append(move_x)
-#         move_y_list.append(move_y)
-    
     act = move(move_x, move_y)
     if act != 'at':
         return act
