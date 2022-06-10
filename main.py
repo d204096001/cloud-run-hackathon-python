@@ -33,7 +33,7 @@ def index():
 def move():
     request.get_data()
 #     logger.info(request.json)
-    json = request.json()
+    json = request.json
 #     return moves[random.randrange(len(moves))]
     return str(json['arena'])
 
