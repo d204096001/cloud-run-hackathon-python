@@ -23,16 +23,18 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 moves = ['F', 'T', 'L', 'R']
+info = ""
 
 @app.route("/", methods=['GET'])
 def index():
 #     return "Let the battle begin!"
-    return logger
+    return str(info)
 
 @app.route("/", methods=['POST'])
 def move():
     request.get_data()
-    logger.info(request.json)
+#     logger.info(request.json)
+    info = request.json
     return moves[random.randrange(len(moves))]
 
 if __name__ == "__main__":
