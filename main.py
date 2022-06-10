@@ -49,52 +49,101 @@ def move():
         return move_x, move_y
     
     def move(move_x, move_y):
-        if move_x > 0:
-            if self_state['direction'] == 'E':
-                return 'F'
-            elif self_state['direction'] == 'W':
-                return 'L'
-            elif self_state['direction'] == 'S':
-                return 'L'
-            elif self_state['direction'] == 'N':
-                return 'R'
+        r = random.random()
+        if r > 0.5:
+            if move_x > 0:
+                if self_state['direction'] == 'E':
+                    return 'F'
+                elif self_state['direction'] == 'W':
+                    return 'L'
+                elif self_state['direction'] == 'S':
+                    return 'L'
+                elif self_state['direction'] == 'N':
+                    return 'R'
+                else:
+                    return 'at'
+            elif move_x < 0:
+                if self_state['direction'] == 'E':
+                    return 'L'
+                elif self_state['direction'] == 'W':
+                    return 'F'
+                elif self_state['direction'] == 'S':
+                    return 'R'
+                elif self_state['direction'] == 'N':
+                    return 'L'
+                else:
+                    return 'at'
+            elif move_y > 0:
+                if self_state['direction'] == 'E':
+                    return 'R'
+                elif self_state['direction'] == 'W':
+                    return 'R'
+                elif self_state['direction'] == 'S':
+                    return 'F'
+                elif self_state['direction'] == 'N':
+                    return 'L'
+                else:
+                    return 'at'
+            elif move_y < 0:
+                if self_state['direction'] == 'E':
+                    return 'L'
+                elif self_state['direction'] == 'W':
+                    return 'R'
+                elif self_state['direction'] == 'S':
+                    return 'L'
+                elif self_state['direction'] == 'N':
+                    return 'F'
+                else:
+                    return 'at'
             else:
-                return 'at'
-        elif move_x < 0:
-            if self_state['direction'] == 'E':
-                return 'L'
-            elif self_state['direction'] == 'W':
-                return 'F'
-            elif self_state['direction'] == 'S':
-                return 'R'
-            elif self_state['direction'] == 'N':
-                return 'L'
-            else:
-                return 'at'
-        elif move_y > 0:
-            if self_state['direction'] == 'E':
-                return 'R'
-            elif self_state['direction'] == 'W':
-                return 'R'
-            elif self_state['direction'] == 'S':
-                return 'F'
-            elif self_state['direction'] == 'N':
-                return 'L'
-            else:
-                return 'at'
-        elif move_y < 0:
-            if self_state['direction'] == 'E':
-                return 'L'
-            elif self_state['direction'] == 'W':
-                return 'R'
-            elif self_state['direction'] == 'S':
-                return 'L'
-            elif self_state['direction'] == 'N':
-                return 'F'
-            else:
-                return 'at'
+                return 'T'
         else:
-            return 'T'
+            if move_y > 0:
+                if self_state['direction'] == 'E':
+                    return 'R'
+                elif self_state['direction'] == 'W':
+                    return 'R'
+                elif self_state['direction'] == 'S':
+                    return 'F'
+                elif self_state['direction'] == 'N':
+                    return 'L'
+                else:
+                    return 'at'
+            elif move_y < 0:
+                if self_state['direction'] == 'E':
+                    return 'L'
+                elif self_state['direction'] == 'W':
+                    return 'R'
+                elif self_state['direction'] == 'S':
+                    return 'L'
+                elif self_state['direction'] == 'N':
+                    return 'F'
+                else:
+                    return 'at'
+            elif move_x > 0:
+                if self_state['direction'] == 'E':
+                    return 'F'
+                elif self_state['direction'] == 'W':
+                    return 'L'
+                elif self_state['direction'] == 'S':
+                    return 'L'
+                elif self_state['direction'] == 'N':
+                    return 'R'
+                else:
+                    return 'at'
+            elif move_x < 0:
+                if self_state['direction'] == 'E':
+                    return 'L'
+                elif self_state['direction'] == 'W':
+                    return 'F'
+                elif self_state['direction'] == 'S':
+                    return 'R'
+                elif self_state['direction'] == 'N':
+                    return 'L'
+                else:
+                    return 'at'
+            else:
+                return 'T'
     
     def fine_target_fire():
         # update map
