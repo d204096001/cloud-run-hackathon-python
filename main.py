@@ -28,7 +28,7 @@ info = ""
 @app.route("/", methods=['GET'])
 def index():
 #     return "Let the battle begin!"
-    return str(info)
+    return info
 
 @app.route("/", methods=['POST'])
 def move():
