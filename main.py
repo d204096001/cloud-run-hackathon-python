@@ -94,7 +94,7 @@ def move():
             else:
                 return 'at'
         else:
-            return 'at'
+            return 'T'
     
     def fine_target_fire():
         # update map
@@ -150,6 +150,13 @@ def move():
             return 'T'
     
     move_x, move_y = fine_nearest_corner()
+#     if (move_x == last_move_x)and(move_y == last_move_y):
+#         # stock
+#         return 'T'
+#     else:
+#         move_x_list.append(move_x)
+#         move_y_list.append(move_y)
+    
     act = move(move_x, move_y)
     if act != 'at':
         return act
